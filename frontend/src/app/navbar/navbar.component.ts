@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  currUser=false; //change to true if user is logged in
+  currUser=true; //change to true if user is logged in
   constructor() { }
 
   ngOnInit(): void {

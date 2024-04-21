@@ -17,14 +17,14 @@ module.exports.signup=async (req, res) => {
             if(err){
                 return next(err);
             }
-            req.flash("success", "Your are Registered. Welcome to AnyRooms");
-            res.redirect("/listings");
+            // req.flash("success", "Your are Registered. Welcome to AnyRooms");
+            res.redirect("http://localhost:4200/listings");
         })
     }
     catch (e) {
         console.log(e);
         req.flash("error", e.message);
-        res.redirect("/signup");
+        res.redirect("http://localhost:4200/signup");
     }
 };
 
@@ -33,8 +33,8 @@ module.exports.getLogin=(req, res) => {
 };
 
 module.exports.login=(req, res) => {
-    req.flash("success", "Welcome back to AnyRooms");
-    const redirectUrl= res.locals.redirectUrl || "/listings";
+    // req.flash("success", "Welcome back to AnyRooms");
+    const redirectUrl= "http://localhost:4200/listings";
     res.redirect(redirectUrl);
 };
 
@@ -44,6 +44,6 @@ module.exports.logout=(req, res) => {
             return next(err);
         }
         req.flash("success", "You are Logged Out");
-        res.redirect("/listings");
+        res.redirect("/listings/new");
     });
 }
