@@ -19,6 +19,7 @@ const User = require("./models/user.js");
 const listingRouter = require('./routes/listing.js');
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const cors = require('cors');
 
 app.engine('ejs', engine);
 app.set("views", path.join(__dirname, "views"));
@@ -26,7 +27,7 @@ app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "./public")));
-
+app.use(cors());
 
 //Mongoose initialisation
 const Mongo_URL = process.env.MONGO_URL;

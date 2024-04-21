@@ -6,7 +6,7 @@ const geocodingClient = mbxGeoCoding({ accessToken: mapToken });
 
 module.exports.index=async (req, res) => {
     let listings = await Listing.find({});
-    res.json({listings});
+    res.json(listings);
 }
 
 module.exports.createListingForm=(req, res) => {
